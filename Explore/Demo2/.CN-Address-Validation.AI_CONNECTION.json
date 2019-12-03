@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "5wJLvIj8SkfcvLWiOY30uO",
+    "name" : "CN-Address-Validation",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "BbeAzu2JQhtGci3-gt-16161998-2019-12-03T12:57:35.447Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "knQ54dVMsothA27a33zQWd",
+    "name" : "SC_Address_Validation",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "rxFNBeNTYglxbdy-gt-14185363-2019-12-03T12:57:35.289Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Demo2"
+  } ]
+}
