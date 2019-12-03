@@ -1,0 +1,47 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>vD4UEWglH8n55Er-gt-1295689-2019-04-22T07:17:31.353Z::conn.xml</types1:EntryId>
+      <types1:Name>CN-Address-Validation</types1:Name>
+      <types1:ParentFlowIds>W7eLyCnNZPD4ARW-gt-1319034-2019-04-22T07:22:35.774Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:Ann</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-22T07:17:31Z</types1:CreationDate>
+      <types1:ModifiedBy>mjoseph@dibootcamp.infaips.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-22T07:52:19Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mjoseph@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-22T07:59:13Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/CN-Address-Validation/CN-Address-Validation.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="CN-Address-Validation"
+                     label="CN-Address-Validation"
+                     name="CN-Address-Validation">
+            <description/>
+            <tags>.agent:Ann</tags>
+            <agent>Ann</agent>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="true"
+                               connectorPath="project:/rt.connector/SC_Address_Validation/SC_Address_Validation_svcDef.xml"
+                               guid="4DlhU4FSOE6eqIhMHUjPa4"
+                               name="SC_Address_Validation"
+                               supportsConnectionTest="false"
+                               uuid="c5db77b6-78d5-4655-975d-b37aa0984c41">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>7zuEQErj0aijbSVJXKILAp</types1:GUID>
+      <types1:DisplayName>CN-Address-Validation</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-03T12:28:22.815Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

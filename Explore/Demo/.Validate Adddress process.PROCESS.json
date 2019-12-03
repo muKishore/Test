@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "2G3M1AMlLIncaXbdWkTlKi",
+    "name" : "Validate Adddress process",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "W7eLyCnNZPD4ARW-gt-1319034-2019-04-22T07:22:35.774Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "7zuEQErj0aijbSVJXKILAp",
+    "name" : "CN-Address-Validation",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "vD4UEWglH8n55Er-gt-1295689-2019-04-22T07:17:31.353Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Demo"
+  } ]
+}
