@@ -12,7 +12,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
       <types1:CreationDate>2019-12-03T13:21:52Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>mjoseph@dibootcamp.infaips.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-12-04T11:47:23Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -107,5 +108,5 @@
       <types1:GUID>3OrNO4dQpQGkdCTtFAIt2t</types1:GUID>
       <types1:DisplayName>Validate Adddress process</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-12-03T13:23:53.916Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-05-18T10:29:18.886Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
