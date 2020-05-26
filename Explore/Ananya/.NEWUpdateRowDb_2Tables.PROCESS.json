@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "afDgCdX2YahdzUUlPXhzuS",
+    "name" : "NEWUpdateRowDb_2Tables",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "jFquUHukfRLdqcg-gt-1275399-2020-05-19T06:26:28.158Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "0MFruoyku49bSJM013z7Az",
+    "name" : "CN-DB-HR",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Z6K0XV4KhPVEQrX-gt-1275385-2020-05-19T06:26:27.824Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Ananya"
+  } ]
+}

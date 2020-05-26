@@ -1,0 +1,65 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Z6K0XV4KhPVEQrX-gt-1275385-2020-05-19T06:26:27.824Z::conn.xml</types1:EntryId>
+      <types1:Name>CN-DB-HR</types1:Name>
+      <types1:ParentFlowIds>jFquUHukfRLdqcg-gt-1275399-2020-05-19T06:26:28.158Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:Ananya_Agent</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T06:26:28Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="CN-DB-HR"
+                     label="CN-DB-HR"
+                     name="CN-DB-HR">
+            <description/>
+            <tags>.agent:Ananya_Agent</tags>
+            <agent>Ananya_Agent</agent>
+            <attributes>
+               <attribute encrypted="false"
+                          name="JDBC Connection URL"
+                          value="jdbc:oracle:thin:@localhost:1521/orcl"/>
+               <attribute encrypted="false"
+                          name="JDBC Jar Directory"
+                          value="C:\Program Files\Informatica Cloud Secure Agent\apps\process-engine\ext"/>
+               <attribute encrypted="false"
+                          name="JDBC Driver Class Name"
+                          value="oracle.jdbc.OracleDriver"/>
+               <attribute encrypted="false" name="Schema" value="hr"/>
+               <attribute encrypted="false" name="Username" value="hr"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false" name="Object Filter" value=""/>
+               <attribute encrypted="false" name="TimeZone" value="Default"/>
+               <attribute encrypted="false" name="$read-Isolation Level" value="None"/>
+               <attribute encrypted="false"
+                          name="$read-Override Isolation Level"
+                          value="false"/>
+               <attribute encrypted="false" name="$write-Number of retries" value="5"/>
+               <attribute encrypted="false" name="$write-Retry wait period" value="3"/>
+            </attributes>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           plugin="ICS"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="true"
+                           supportsOData="true"
+                           type="GenericJDBCAdapter"
+                           uuid="33ec8fc7-dc6d-4d2e-9f6f-a950669a62d1">
+               <description>JDBC  Generic Cloud Adapter</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>0MFruoyku49bSJM013z7Az</types1:GUID>
+      <types1:DisplayName>CN-DB-HR</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:41:51.855Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

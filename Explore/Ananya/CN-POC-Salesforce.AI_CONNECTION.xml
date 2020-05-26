@@ -1,0 +1,56 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>T76i3zymbduaa-gt-1275370-2020-05-19T06:26:27.41Z::conn.xml</types1:EntryId>
+      <types1:Name>CN-POC-Salesforce</types1:Name>
+      <types1:ParentFlowIds>r81Owhz5chspiRA-gt-1275409-2020-05-19T06:26:28.2Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T06:26:27Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="CN-POC-Salesforce"
+                     label="CN-POC-Salesforce"
+                     name="CN-POC-Salesforce">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <soaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                          connectorPath="project:/com.activevos.cumulus.cloud.extend.playbook.configuration/config/sfConnector.xml"
+                          name="Salesforce"
+                          supportsConnectionTest="true"
+                          supportsOData="true"
+                          uuid="05fc48f1-e6e1-441b-b700-bac396ca2ed1">
+               <description>Salesforce.com SOA based data connector.</description>
+            </soaConnector>
+            <authentication type="$infa_basicform">
+               <attributes>
+                  <attribute encrypted="false"
+                             name="username"
+                             value="ananyamome@informatica.com"/>
+                  <attribute encrypted="true" name="password" value=""/>
+                  <attribute encrypted="true" name="token" value=""/>
+                  <attribute encrypted="false"
+                             name="serviceUrl"
+                             value="https://login.salesforce.com/services/Soap/c/47.0"/>
+                  <attribute encrypted="true" name="clientId" value=""/>
+                  <attribute encrypted="true" name="clientSecret" value=""/>
+               </attributes>
+            </authentication>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>hJJVWQgJfY0jedZujUPxcl</types1:GUID>
+      <types1:DisplayName>CN-POC-Salesforce</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:41:51.865Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

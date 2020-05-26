@@ -1,0 +1,135 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>jFquUHukfRLdqcg-gt-1275399-2020-05-19T06:26:28.158Z::pd.xml</types1:EntryId>
+      <types1:Name>NEWUpdateRowDb_2Tables</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T06:26:28Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="NEWUpdateRowDb_2Tables"
+                  name="NEWUpdateRowDb_2Tables">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_actCustomer" type="reference">
+                  <options>
+                     <option name="referenceTo">CN-DB-HR:ACTCUSTOMERS</option>
+                     <option name="required">false</option>
+                     <option name="guid">0MFruoyku49bSJM013z7Az</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_scontact" type="reference">
+                  <options>
+                     <option name="referenceTo">CN-DB-HR:SCONTACT</option>
+                     <option name="required">false</option>
+                     <option name="guid">0MFruoyku49bSJM013z7Az</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="k3pp358y" targetId="k3pp358x"/>
+               </start>
+               <assignment id="k3pp358x">
+                  <title>Assignment to tmp_scontact</title>
+                  <operation source="query" to="temp.tmp_scontact">
+                     <query from="CN-DB-HR:SCONTACT">
+                        <where>ID = '0036F00002ZgB3AQAV'</where>
+                     </query>
+                  </operation>
+                  <link id="k3pp3596" targetId="k3pp3595"/>
+               </assignment>
+               <assignment id="k3pp35a6">
+                  <title>Assignment to tmp_actCustomer</title>
+                  <operation source="query" to="temp.tmp_actCustomer">
+                     <query from="CN-DB-HR:ACTCUSTOMERS">
+                        <where>CUSTOMER_ID = '1055'</where>
+                     </query>
+                  </operation>
+                  <link id="k3pp35ap" targetId="k3pp35ao"/>
+               </assignment>
+               <container id="k3pp3595" type="exclusive">
+                  <title>tmp_Scntact</title>
+                  <flow id="k3pp3599">
+                     <assignment id="k415x8wq">
+                        <title>Assignment to DEPARTMENT</title>
+                        <operation source="constant" to="temp.tmp_scontact.DEPARTMENT">Finance</operation>
+                     </assignment>
+                     <link id="k3pp359a" targetId="k3pp3595" type="containerLink"/>
+                  </flow>
+                  <flow id="k3pp359c">
+                     <link id="k3pp359d" targetId="k3pp3595" type="containerLink"/>
+                  </flow>
+                  <link id="k3pp3598" targetId="k3pp3599" type="containerLink">
+                     <condition source="formula">
+                        <function name="set">
+                           <arg name="field">{$temp.tmp_scontact}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="k3pp359b" targetId="k3pp359c" type="containerLink">
+                     <condition source="formula">
+                        <function name="unset">
+                           <arg name="field">{$temp.tmp_scontact}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="k3pp35a7" targetId="k3pp35a6"/>
+               </container>
+               <container id="k3pp35ao" type="exclusive">
+                  <title>tmp_actCustomer</title>
+                  <flow id="k3pp35as">
+                     <assignment id="k3pp35b8">
+                        <title>Assignment to NAME</title>
+                        <operation source="constant" to="temp.tmp_actCustomer.NAME">Gene Saftler</operation>
+                     </assignment>
+                     <link id="k3pp35at" targetId="k3pp35ao" type="containerLink"/>
+                  </flow>
+                  <flow id="k3pp35av">
+                     <link id="k3pp35aw" targetId="k3pp35ao" type="containerLink"/>
+                  </flow>
+                  <link id="k3pp35ar" targetId="k3pp35as" type="containerLink">
+                     <condition source="formula">
+                        <function name="set">
+                           <arg name="field">{$temp.tmp_actCustomer}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="k3pp35au" targetId="k3pp35av" type="containerLink">
+                     <condition source="formula">
+                        <function name="unset">
+                           <arg name="field">{$temp.tmp_actCustomer}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="k3pp35aq" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>afDgCdX2YahdzUUlPXhzuS</types1:GUID>
+      <types1:DisplayName>NEWUpdateRowDb_2Tables</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:41:52.213Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,126 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>r81Owhz5chspiRA-gt-1275409-2020-05-19T06:26:28.2Z::pd.xml</types1:EntryId>
+      <types1:Name>SFDC_create_update_delete</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2020-05-19T06:26:28Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SFDC create update delete"
+                  name="SFDC_create_update_delete">
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_Account_Object1" type="reference">
+                  <options>
+                     <option name="referenceTo">CN-POC-Salesforce:Account</option>
+                     <option name="required">false</option>
+                     <option name="guid">hJJVWQgJfY0jedZujUPxcl</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="k3y8tmbd" targetId="k3y8tmbc"/>
+               </start>
+               <container id="k3y8tmbc" type="parallel">
+                  <title>Parallel Paths 1</title>
+                  <flow id="k3y8tmbg">
+                     <create id="k3y8tmbv">
+                        <title>Create Account Record</title>
+                        <entityName>CN-POC-Salesforce:Account</entityName>
+                        <createInput>
+                           <parameter name="Name" source="constant" updatable="true">Test record for create</parameter>
+                           <parameter name="BillingCity" source="constant" updatable="true">Bangalore</parameter>
+                           <parameter name="BillingState" source="constant" updatable="true">Karnataka</parameter>
+                           <parameter name="BillingCountry" source="constant" updatable="true">India</parameter>
+                        </createInput>
+                     </create>
+                     <link id="k3y8tmbh" targetId="k3y8tmbc" type="containerLink"/>
+                  </flow>
+                  <flow id="k3y8tmqg">
+                     <assignment id="k3y8tmqm">
+                        <title>Query Account Record</title>
+                        <operation source="query" to="temp.tmp_Account_Object1">
+                           <query from="CN-POC-Salesforce:Account">
+                              <where>Id = '0016F00003VoK60'</where>
+                           </query>
+                        </operation>
+                        <link id="k3y8tmrm" targetId="k3y8tmrl"/>
+                     </assignment>
+                     <container id="k3y8tmrl" type="exclusive">
+                        <title>tmp_Account_Object1</title>
+                        <flow id="k3y8tmro">
+                           <assignment id="k3y8tms4">
+                              <title>Assignment to Account Name</title>
+                              <operation source="constant" to="temp.tmp_Account_Object1.Name">Test POC Account</operation>
+                           </assignment>
+                           <link id="k3y8tmrp" targetId="k3y8tmrl" type="containerLink"/>
+                        </flow>
+                        <flow id="k3y8tmrr">
+                           <link id="k3y8tmrs" targetId="k3y8tmrl" type="containerLink"/>
+                        </flow>
+                        <link id="k3y8tmrn" targetId="k3y8tmro" type="containerLink">
+                           <condition source="formula">
+                              <function name="set">
+                                 <arg name="field">{$temp.tmp_Account_Object1}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="k3y8tmrq" targetId="k3y8tmrr" type="containerLink">
+                           <condition source="formula">
+                              <function name="unset">
+                                 <arg name="field">{$temp.tmp_Account_Object1}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                     </container>
+                     <link id="k3y8tmqh" targetId="k3y8tmbc" type="containerLink"/>
+                  </flow>
+                  <flow id="k3y8tmsn">
+                     <service id="k3y8tmsw">
+                        <title>Delete Account Object</title>
+                        <serviceName>avDeleteAnyEntityService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Connection Name" source="constant">CN-POC-Salesforce</parameter>
+                           <parameter name="Object Type" source="constant">Account</parameter>
+                           <parameter name="Object Id" source="constant">0016F00003VoNbAQAV</parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="k3y8tmso" targetId="k3y8tmbc" type="containerLink"/>
+                  </flow>
+                  <link id="k3y8tmbf" targetId="k3y8tmbg" type="containerLink"/>
+                  <link id="k3y8tmqf" targetId="k3y8tmqg" type="containerLink"/>
+                  <link id="k3y8tmsm" targetId="k3y8tmsn" type="containerLink"/>
+                  <link id="k3y8tmbe" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>170fRTKsCXPiFTFzIMWJU9</types1:GUID>
+      <types1:DisplayName>SFDC create update delete</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:41:52.243Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
