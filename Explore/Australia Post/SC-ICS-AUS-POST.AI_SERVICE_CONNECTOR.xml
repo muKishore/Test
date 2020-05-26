@@ -1,0 +1,595 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>06xqPVEQrXhNUdy-gt-481215-2018-09-07T04:54:39.984Z::svc.xml</types1:EntryId>
+      <types1:Name>SC-ICS-AUS-POST-1</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T05:19:48Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SC_ICS_AUS_POST_1/SC_ICS_AUS_POST_1_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SC-ICS-AUS-POST"
+                            label=""
+                            name="SC-ICS-AUS-POST-1"
+                            uuid="0397d247-e2b1-4307-9e0e-b4f442f01f3d">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Login"
+                       maxRedirects="100"
+                       name="Login"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="UserName"
+                                nogen="true"
+                                required="true"
+                                testWith="sridesai@informatica.com.devtdmpoc"
+                                type="string"/>
+                     <parameter name="Password"
+                                required="true"
+                                testWith="infa123"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://dm-us.informaticacloud.com/ma/api/v2/user/login"
+                                        verb="POST">
+                        <authentication>
+                           <username>sridesai@informatica.com.devtdmpoc</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                        <body>{{"@type": "login","username": "{$UserName}","password": "{$Password}"}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="icSessionId"
+                            property="icSessionId"
+                            type="string"/>
+                     <field description=""
+                            name="ResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="CreateMCT"
+                       maxRedirects="100"
+                       name="CreateMCT"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="orgId" required="true" testWith="01002F" type="string"/>
+                     <parameter name="name"
+                                required="true"
+                                testWith="MCT_AusPost_masked_test_disable_serial"
+                                type="string"/>
+                     <parameter name="agentId"
+                                required="true"
+                                testWith="01002F0800000000000A"
+                                type="string"/>
+                     <parameter name="runtimeEnvironmentId"
+                                required="true"
+                                testWith="01002F2500000000000D"
+                                type="string"/>
+                     <parameter name="mappingId"
+                                required="true"
+                                testWith="01002F1700000000001F"
+                                type="string"/>
+                     <parameter name="SourceTableName"
+                                required="true"
+                                testWith="ACCOUNT"
+                                type="string"/>
+                     <parameter name="TargetTableName"
+                                required="true"
+                                testWith="Account"
+                                type="string"/>
+                     <parameter name="icSessionId"
+                                required="true"
+                                testWith="46UzVCFHnaGhsPYgrm5rGR"
+                                type="string"/>
+                     <parameter name="FailureEmail"
+                                required="true"
+                                testWith="sridesai@informatica.com"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na2.dm-us.informaticacloud.com/saas/api/v2/mttask"
+                                        verb="POST">
+                        <authentication>
+                           <username>sridesai@informatica.com.devtdmpoc</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/xml</header>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body>{&lt;mtTask&gt;
+    &lt;id&gt;001J3T0Z000000000015&lt;/id&gt;
+    &lt;orgId&gt;{$orgId}&lt;/orgId&gt;
+    &lt;name&gt;{$name}&lt;/name&gt;
+    &lt;description&gt;&lt;/description&gt;
+	&lt;errorTaskEmail&gt;
+        &lt;emailType&gt;ERROR&lt;/emailType&gt;
+        &lt;emails&gt;{$FailureEmail}&lt;/emails&gt;
+        &lt;id&gt;13160&lt;/id&gt;
+    &lt;/errorTaskEmail&gt;
+    &lt;agentId&gt;{$agentId}&lt;/agentId&gt;
+    &lt;runtimeEnvironmentId&gt;{$runtimeEnvironmentId}&lt;/runtimeEnvironmentId&gt;
+    &lt;maxLogs&gt;10&lt;/maxLogs&gt;
+    &lt;parameters&gt;
+        &lt;parameter&gt;
+            &lt;name&gt;$Src_SqlServer_Objects$&lt;/name&gt;
+            &lt;type&gt;EXTENDED_SOURCE&lt;/type&gt;
+            &lt;label&gt;Src_SqlServer_Objects&lt;/label&gt;
+            &lt;uiProperties&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;connectionParameterized&lt;/key&gt;
+                    &lt;value&gt;false&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;isMsrcFilterParameterized&lt;/key&gt;
+                    &lt;value&gt;false&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;isMsrcSortParameterized&lt;/key&gt;
+                    &lt;value&gt;false&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objlabel&lt;/key&gt;
+                    &lt;value&gt;SqlServer_Table&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objectParameterized&lt;/key&gt;
+                    &lt;value&gt;true&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objDesc&lt;/key&gt;
+                    &lt;value&gt;&lt;/value&gt;
+                &lt;/entry&gt;
+            &lt;/uiProperties&gt;
+            &lt;newFlatFile&gt;false&lt;/newFlatFile&gt;
+            &lt;newObject&gt;false&lt;/newObject&gt;
+            &lt;showBusinessNames&gt;true&lt;/showBusinessNames&gt;
+            &lt;naturalOrder&gt;true&lt;/naturalOrder&gt;
+            &lt;truncateTarget&gt;false&lt;/truncateTarget&gt;
+            &lt;bulkApiDBTarget&gt;false&lt;/bulkApiDBTarget&gt;
+            &lt;customFuncCfg&gt;
+                &lt;id&gt;-1&lt;/id&gt;
+            &lt;/customFuncCfg&gt;
+            &lt;tgtFieldRefs/&gt;
+            &lt;extendedObject&gt;
+                &lt;object&gt;
+                    &lt;name&gt;{$SourceTableName}&lt;/name&gt;
+                    &lt;label&gt;{$SourceTableName}&lt;/label&gt;
+                    &lt;metadataUpdated&gt;false&lt;/metadataUpdated&gt;
+                    &lt;relations/&gt;
+                    &lt;children/&gt;
+                &lt;/object&gt;
+                &lt;filters/&gt;
+                &lt;sortFields/&gt;
+            &lt;/extendedObject&gt;
+            &lt;runtimeAttrs/&gt;
+            &lt;isRESTModernSource&gt;true&lt;/isRESTModernSource&gt;
+            &lt;isFileList&gt;false&lt;/isFileList&gt;
+            &lt;handleSpecialChars&gt;false&lt;/handleSpecialChars&gt;
+            &lt;overriddenFields/&gt;
+            &lt;tgtObjectAttributes/&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+            &lt;name&gt;$Tgt_Salesforce$&lt;/name&gt;
+            &lt;type&gt;TARGET&lt;/type&gt;
+            &lt;label&gt;Tgt_Salesforce&lt;/label&gt;
+            &lt;uiProperties&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;connectionParameterized&lt;/key&gt;
+                    &lt;value&gt;false&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objlabel&lt;/key&gt;
+                    &lt;value&gt;sf_object&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objectParameterized&lt;/key&gt;
+                    &lt;value&gt;true&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objDesc&lt;/key&gt;
+                    &lt;value&gt;&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;defaultTargetUpdateColumns&lt;/key&gt;
+                    &lt;value&gt;&lt;/value&gt;
+                &lt;/entry&gt;
+            &lt;/uiProperties&gt;
+            &lt;targetObject&gt;{$TargetTableName}&lt;/targetObject&gt;
+            &lt;targetObjectLabel&gt;{$TargetTableName}&lt;/targetObjectLabel&gt;
+            &lt;newFlatFile&gt;false&lt;/newFlatFile&gt;
+            &lt;newObject&gt;false&lt;/newObject&gt;
+            &lt;showBusinessNames&gt;false&lt;/showBusinessNames&gt;
+            &lt;naturalOrder&gt;true&lt;/naturalOrder&gt;
+            &lt;truncateTarget&gt;false&lt;/truncateTarget&gt;
+            &lt;bulkApiDBTarget&gt;false&lt;/bulkApiDBTarget&gt;
+            &lt;operationType&gt;Update&lt;/operationType&gt;
+            &lt;customFuncCfg&gt;
+                &lt;id&gt;-1&lt;/id&gt;
+            &lt;/customFuncCfg&gt;
+            &lt;tgtFieldRefs/&gt;
+            &lt;extendedObject&gt;
+                &lt;filters/&gt;
+                &lt;sortFields/&gt;
+            &lt;/extendedObject&gt;
+            &lt;runtimeAttrs/&gt;
+            &lt;isRESTModernSource&gt;true&lt;/isRESTModernSource&gt;
+            &lt;isFileList&gt;false&lt;/isFileList&gt;
+            &lt;handleSpecialChars&gt;false&lt;/handleSpecialChars&gt;
+            &lt;overriddenFields/&gt;
+            &lt;tgtObjectAttributes/&gt;
+        &lt;/parameter&gt;
+    &lt;/parameters&gt;
+    &lt;verbose&gt;false&lt;/verbose&gt;
+    &lt;mappingId&gt;{$mappingId}&lt;/mappingId&gt;
+    &lt;shortDescription&gt;&lt;/shortDescription&gt;
+    &lt;sessionProperties/&gt;
+    &lt;sequences/&gt;
+    &lt;inOutParameters/&gt;
+    &lt;enableCrossSchemaPushdown&gt;true&lt;/enableCrossSchemaPushdown&gt;
+&lt;/mtTask&gt;}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="StatusCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description="" name="MCT_Id" type="string">
+                        <xquery>{//root/id/text()}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="RunMCT"
+                       maxRedirects="100"
+                       name="RunMCT"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="icSessionId"
+                                required="true"
+                                testWith="4NbhkaJ4mObeiP7hctWSms"
+                                type="string"/>
+                     <parameter name="taskId"
+                                required="true"
+                                testWith="001J3T0Z00000000001H"
+                                type="string"/>
+                     <parameter name="taskType" required="true" testWith="MTT" type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na2.dm-us.informaticacloud.com/saas/api/v2/job"
+                                        verb="POST">
+                        <authentication>
+                           <username>sridesai@informatica.com.devtdmpoc</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body>{&lt;job&gt; 
+&lt;taskId&gt;{$taskId}&lt;/taskId&gt; 
+&lt;taskType&gt;{$taskType}&lt;/taskType&gt;
+&lt;/job&gt;}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="DeleteMCT"
+                       maxRedirects="100"
+                       name="DeleteMCT"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="icSessionId"
+                                nogen="true"
+                                required="true"
+                                testWith="4NbhkaJ4mObeiP7hctWSms"
+                                type="string"/>
+                     <parameter name="mct_id"
+                                nogen="true"
+                                required="true"
+                                testWith="001J3T0Z00000000001H"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na2.dm-us.informaticacloud.com/saas/api/v2/mttask/{$mct_id}"
+                                        verb="DELETE">
+                        <authentication>
+                           <username>sridesai@informatica.com.devtdmpoc</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="CreateMCT_sfReplication"
+                       maxRedirects="100"
+                       name="CreateMCT_sfReplication"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="orgId" required="true" testWith="001J3T" type="string"/>
+                     <parameter name="name"
+                                required="true"
+                                testWith="MCT_Test_Rep_SF_SqlServer_Lead_PKChunk"
+                                type="string"/>
+                     <parameter name="FailureEmail"
+                                required="true"
+                                testWith="chaitanya.krishna@infometry.net,sridesai@informatica.com"
+                                type="string"/>
+                     <parameter name="agentId"
+                                required="true"
+                                testWith="001J3T08000000000005"
+                                type="string"/>
+                     <parameter name="runtimeEnvironmentId"
+                                required="true"
+                                testWith="001J3T25000000000008"
+                                type="string"/>
+                     <parameter name="sourceConnectionId"
+                                required="true"
+                                testWith="001J3T0B00000000001G"
+                                type="string"/>
+                     <parameter name="SourceTableName"
+                                required="true"
+                                testWith="Lead"
+                                type="string"/>
+                     <parameter name="targetConnectionId"
+                                required="true"
+                                testWith="001J3T0B00000000001N"
+                                type="string"/>
+                     <parameter name="TargetTableName"
+                                required="true"
+                                testWith="LEAD"
+                                type="string"/>
+                     <parameter name="mappingId"
+                                required="true"
+                                testWith="001J3T17000000000013"
+                                type="string"/>
+                     <parameter name="icSessionId"
+                                required="true"
+                                testWith="4di1uI61XongiIDZOJSyq8"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na2.dm-us.informaticacloud.com/saas/api/v2/mttask"
+                                        verb="POST">
+                        <authentication>
+                           <username>sridesai@informatica.com.devtdmpoc</username>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/xml</header>
+                           <header name="icSessionId">{$icSessionId}</header>
+                        </httpHeaders>
+                        <body>&lt;mtTask&gt;
+    &lt;orgId&gt;{$orgId}&lt;/orgId&gt;
+    &lt;name&gt;{$name}&lt;/name&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;errorTaskEmail&gt;
+        &lt;emailType&gt;ERROR&lt;/emailType&gt;
+        &lt;emails&gt;{$FailureEmail}&lt;/emails&gt;
+        &lt;id&gt;13474&lt;/id&gt;
+    &lt;/errorTaskEmail&gt;
+    &lt;agentId&gt;{$agentId}&lt;/agentId&gt;
+    &lt;runtimeEnvironmentId&gt;{$runtimeEnvironmentId}&lt;/runtimeEnvironmentId&gt;
+    &lt;maxLogs&gt;10&lt;/maxLogs&gt;
+    &lt;parameters&gt;
+        &lt;parameter&gt;
+            &lt;id&gt;1635634&lt;/id&gt;
+            &lt;name&gt;$Src_Salesforce$&lt;/name&gt;
+            &lt;type&gt;EXTENDED_SOURCE&lt;/type&gt;
+            &lt;label&gt;sf_Src_connection&lt;/label&gt;
+            &lt;description&gt;&lt;/description&gt;
+            &lt;uiProperties&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;connectionParameterized&lt;/key&gt;
+                    &lt;value&gt;true&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;logcnx&lt;/key&gt;
+                    &lt;value&gt;sf_Src_connection&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;isMsrcFilterParameterized&lt;/key&gt;
+                    &lt;value&gt;false&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;isMsrcSortParameterized&lt;/key&gt;
+                    &lt;value&gt;false&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objlabel&lt;/key&gt;
+                    &lt;value&gt;sf_object&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objectParameterized&lt;/key&gt;
+                    &lt;value&gt;true&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objDesc&lt;/key&gt;
+                    &lt;value&gt;&lt;/value&gt;
+                &lt;/entry&gt;
+            &lt;/uiProperties&gt;
+            &lt;sourceConnectionId&gt;{$sourceConnectionId}&lt;/sourceConnectionId&gt;
+            &lt;newFlatFile&gt;false&lt;/newFlatFile&gt;
+            &lt;newObject&gt;false&lt;/newObject&gt;
+            &lt;showBusinessNames&gt;true&lt;/showBusinessNames&gt;
+            &lt;naturalOrder&gt;true&lt;/naturalOrder&gt;
+            &lt;truncateTarget&gt;false&lt;/truncateTarget&gt;
+            &lt;bulkApiDBTarget&gt;false&lt;/bulkApiDBTarget&gt;
+            &lt;customFuncCfg&gt;
+                &lt;id&gt;-1&lt;/id&gt;
+            &lt;/customFuncCfg&gt;
+            &lt;tgtFieldRefs/&gt;
+            &lt;extendedObject&gt;
+                &lt;object&gt;
+                    &lt;name&gt;{$SourceTableName}&lt;/name&gt;
+                    &lt;label&gt;{$SourceTableName}&lt;/label&gt;
+                    &lt;metadataUpdated&gt;false&lt;/metadataUpdated&gt;
+                    &lt;relations/&gt;
+                    &lt;children/&gt;
+                &lt;/object&gt;
+                &lt;filters/&gt;
+                &lt;sortFields/&gt;
+            &lt;/extendedObject&gt;
+            &lt;runtimeAttrs/&gt;
+            &lt;isRESTModernSource&gt;true&lt;/isRESTModernSource&gt;
+            &lt;isFileList&gt;false&lt;/isFileList&gt;
+            &lt;handleSpecialChars&gt;false&lt;/handleSpecialChars&gt;
+            &lt;overriddenFields/&gt;
+            &lt;tgtObjectAttributes/&gt;
+        &lt;/parameter&gt;
+        &lt;parameter&gt;
+            &lt;id&gt;1635635&lt;/id&gt;
+            &lt;name&gt;$Tgt_SqlServer$&lt;/name&gt;
+            &lt;type&gt;TARGET&lt;/type&gt;
+            &lt;label&gt;Tgt_Sql_Connection&lt;/label&gt;
+            &lt;description&gt;&lt;/description&gt;
+            &lt;uiProperties&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;connectionParameterized&lt;/key&gt;
+                    &lt;value&gt;true&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;logcnx&lt;/key&gt;
+                    &lt;value&gt;Tgt_Sql_Connection&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objlabel&lt;/key&gt;
+                    &lt;value&gt;SqlServerObject&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objectParameterized&lt;/key&gt;
+                    &lt;value&gt;true&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;objDesc&lt;/key&gt;
+                    &lt;value&gt;&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;defaultTargetUpdateColumns&lt;/key&gt;
+                    &lt;value&gt;&lt;/value&gt;
+                &lt;/entry&gt;
+            &lt;/uiProperties&gt;
+            &lt;targetConnectionId&gt;{$targetConnectionId}&lt;/targetConnectionId&gt;
+            &lt;targetObject&gt;{$TargetTableName}&lt;/targetObject&gt;
+            &lt;targetObjectLabel&gt;{$TargetTableName}&lt;/targetObjectLabel&gt;
+            &lt;newFlatFile&gt;false&lt;/newFlatFile&gt;
+            &lt;newObject&gt;false&lt;/newObject&gt;
+            &lt;showBusinessNames&gt;true&lt;/showBusinessNames&gt;
+            &lt;naturalOrder&gt;true&lt;/naturalOrder&gt;
+            &lt;truncateTarget&gt;true&lt;/truncateTarget&gt;
+            &lt;bulkApiDBTarget&gt;true&lt;/bulkApiDBTarget&gt;
+            &lt;operationType&gt;Insert&lt;/operationType&gt;
+            &lt;customFuncCfg&gt;
+                &lt;id&gt;-1&lt;/id&gt;
+            &lt;/customFuncCfg&gt;
+            &lt;tgtFieldRefs/&gt;
+            &lt;extendedObject&gt;
+                &lt;filters/&gt;
+                &lt;sortFields/&gt;
+            &lt;/extendedObject&gt;
+            &lt;runtimeAttrs&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;Pre SQL&lt;/key&gt;
+                    &lt;value&gt;&lt;/value&gt;
+                &lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;Post SQL&lt;/key&gt;
+                    &lt;value&gt;Update Infa_FW_MCT set Task_Status = 'Success' where MCT_Task_Name = '{$name}' and Load_Type = 'sfReplication';&lt;/value&gt;
+                &lt;/entry&gt;
+            &lt;/runtimeAttrs&gt;
+            &lt;isRESTModernSource&gt;true&lt;/isRESTModernSource&gt;
+            &lt;isFileList&gt;false&lt;/isFileList&gt;
+            &lt;handleSpecialChars&gt;false&lt;/handleSpecialChars&gt;
+            &lt;overriddenFields/&gt;
+            &lt;tgtObjectAttributes/&gt;
+        &lt;/parameter&gt;
+    &lt;/parameters&gt;
+    &lt;verbose&gt;false&lt;/verbose&gt;
+    &lt;mappingId&gt;{$mappingId}&lt;/mappingId&gt;
+    &lt;shortDescription&gt;&lt;/shortDescription&gt;
+    &lt;sessionProperties/&gt;
+    &lt;sequences/&gt;
+    &lt;inOutParameters/&gt;
+    &lt;enableCrossSchemaPushdown&gt;true&lt;/enableCrossSchemaPushdown&gt;
+&lt;/mtTask&gt;</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="StatusCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description="" name="MCT_Id" type="string">
+                        <xquery>{//root/id/text()}</xquery>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>6T8HenTOmfHjszAvdNGDSb</types1:GUID>
+      <types1:DisplayName>SC-ICS-AUS-POST</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:49.48Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

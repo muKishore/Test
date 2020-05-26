@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "1i3RWwkfkrRhVtNDQtlnwS",
+    "name" : "Conn-SC-Salesforce",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "E8vyXYDdxKlFmVS-gt-1979084-2018-09-07T04:54:40.489Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "eyqH8lMdlSbg5cmAs6T3qB",
+    "name" : "SC-Salesforce",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "50BAWa-gt-481207-2018-09-07T04:54:39.916Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Australia Post"
+  } ]
+}

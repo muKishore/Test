@@ -1,0 +1,401 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>teOm6S6fPAreFRq-gt-481255-2018-09-07T04:54:41.317Z::pd.xml</types1:EntryId>
+      <types1:Name>Australia-Post-Delta-Flow_3-2</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:41Z</types1:CreationDate>
+      <types1:ModifiedBy>sridesai@dibootcamp.infaips.com</types1:ModifiedBy>
+      <types1:ModificationDate>2018-09-07T10:01:47Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T10:01:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Australia-Post-Delta-Flow_3-2/Australia-Post-Delta-Flow_3-2.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Australia-Post-Delta-Flow 3"
+                  name="Australia-Post-Delta-Flow_3-2">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 9</generator>
+            <tempFields>
+               <field description="" name="v_TableList" type="objectlist">
+                  <options>
+                     <option name="referenceTo">CONN-SQLSERVER-SF-PII-METADATA:Infa_FW_PII_SF_OBJECTS</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5BiTrkv4ZS6drgxOoP26AD</option>
+                  </options>
+               </field>
+               <field description="" name="V_TableName" type="reference">
+                  <options>
+                     <option name="referenceTo">CONN-SQLSERVER-SF-PII-METADATA:Infa_FW_PII_SF_OBJECTS</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5BiTrkv4ZS6drgxOoP26AD</option>
+                  </options>
+               </field>
+               <field description="" name="v_MCTName" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="v_Counter" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="V_Row_Count" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Email_Input" type="reference">
+                  <options>
+                     <option name="referenceTo">AP-Email-1:EmailTaskInput</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">bFr1ORQ5863gRoPlz3BTAt</option>
+                  </options>
+               </field>
+               <field description="" name="v_Infa_FW_MCT_TableList_TC" type="objectlist">
+                  <options>
+                     <option name="referenceTo">CONN-SQLSERVER-SF-PII-METADATA:Infa_FW_MCT</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5BiTrkv4ZS6drgxOoP26AD</option>
+                  </options>
+               </field>
+               <field description="" name="v_sfReplication_TotalCount" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="v_sfReplication_SuccessCount" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="v_Infa_FW_MCT_TableList_SC" type="objectlist">
+                  <options>
+                     <option name="referenceTo">CONN-SQLSERVER-SF-PII-METADATA:Infa_FW_MCT</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5BiTrkv4ZS6drgxOoP26AD</option>
+                  </options>
+               </field>
+               <field description="" name="v_SQL_TABLE_NAME" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="v_Mapping_Id" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>sridesai@informatica.com.devtdmpoc</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jjpjx49a" targetId="jjpjx499"/>
+               </start>
+               <assignment id="jjpjx499">
+                  <title>Assignment to V_Row_Count, v_TableList</title>
+                  <operation source="list" to="temp.v_TableList">
+                     <query from="CONN-SQLSERVER-SF-PII-METADATA-1:Infa_FW_PII_SF_OBJECTS">
+                        <where>LIMIT 999</where>
+                     </query>
+                  </operation>
+                  <operation source="formula" to="temp.V_Row_Count">
+                     <expression language="XQuery">list:count($temp.v_TableList )</expression>
+                  </operation>
+                  <link id="jjpjx49f" targetId="jjpjx49e"/>
+               </assignment>
+               <service id="jjpjx49e">
+                  <title>Login</title>
+                  <serviceName>CON-SC1-AUS-POST2-1:Login</serviceName>
+                  <serviceGUID>9GNyM3CZASxesixV1a8JcQ</serviceGUID>
+                  <serviceInput>
+                     <parameter name="UserName" source="constant">sridesai@informatica.com.devtdmpoc</parameter>
+                     <parameter name="Password" source="constant">infa123</parameter>
+                  </serviceInput>
+                  <link id="jjpjx49r" targetId="jjpjx49q"/>
+               </service>
+               <container id="jjpjx49q" type="exclusive">
+                  <title>Response Code</title>
+                  <flow id="jjpjx4a0">
+                     <assignment id="jjpjx4b5">
+                        <title>Assignment to V_TableName, v_SQL_TABLE_NAME</title>
+                        <operation source="formula" to="temp.V_TableName">
+                           <expression language="XQuery">head($temp.v_TableList )</expression>
+                        </operation>
+                        <operation source="formula" to="temp.v_SQL_TABLE_NAME">
+                           <expression language="XQuery">fn:upper-case($temp.V_TableName[1]/sf_object_name )</expression>
+                        </operation>
+                        <link id="jjpjx4bz" targetId="jjpjx4by"/>
+                     </assignment>
+                     <container id="jjpjx4by" type="exclusive">
+                        <title>Rowcount Check</title>
+                        <flow id="jjpjx4c9">
+                           <assignment id="jjpjx4e3">
+                              <title>Assignment to v_MCTName, v_TableList etc.</title>
+                              <operation source="formula" to="temp.v_MCTName">
+                                 <expression language="XQuery">fn:concat('MCT_AusPost_SF_SqlServer_Replication_', $temp.V_TableName[1]/sf_object_name)
+</expression>
+                              </operation>
+                              <operation source="formula" to="temp.v_TableList">
+                                 <expression language="XQuery">remove($temp.v_TableList ,1)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.V_Row_Count">
+                                 <expression language="XQuery">$temp.V_Row_Count -1</expression>
+                              </operation>
+                              <operation source="formula" to="temp.v_Mapping_Id">
+                                 <expression language="XQuery">switch($temp.V_TableName[1]/sf_object_name)
+case "Account" return '001J3T17000000000013' 
+case "Campaign" return '001J3T17000000000013'
+case "CampaignMember" return '001J3T17000000000013'
+case "Case" return '001J3T17000000000013'
+case "Contact" return '001J3T17000000000013'
+case "Event" return '001J3T17000000000013'
+case "EventRelation" return '001J3T17000000000013'
+case "Lead" return '001J3T17000000000013'
+case "LoginHistory" return '001J3T17000000000013'
+case "Opportunity" return '001J3T17000000000013'
+case "Task" return '001J3T17000000000013'
+case "User" return '001J3T17000000000013'
+default return '001J3T1700000000000X'	</expression>
+                              </operation>
+                              <link id="jjpjx4ek" targetId="jjpjx4ej"/>
+                           </assignment>
+                           <service id="jjpjx4ej">
+                              <title>CreateMCT_sfReplication</title>
+                              <serviceName>CON-SC1-AUS-POST2-1:CreateMCT_sfReplication</serviceName>
+                              <serviceGUID>9GNyM3CZASxesixV1a8JcQ</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="orgId" source="constant">001J3T</parameter>
+                                 <parameter name="name" source="field" updatable="true">temp.v_MCTName</parameter>
+                                 <parameter name="FailureEmail" source="constant">chaitanya.krishna@infometry.net,sridesai@informatica.com</parameter>
+                                 <parameter name="agentId" source="constant">001J3T08000000000005</parameter>
+                                 <parameter name="runtimeEnvironmentId" source="constant">001J3T25000000000008</parameter>
+                                 <parameter name="sourceConnectionId" source="constant">001J3T0B00000000001G</parameter>
+                                 <parameter name="SourceTableName" source="field" updatable="true">temp.V_TableName[1]/sf_object_name</parameter>
+                                 <parameter name="targetConnectionId" source="constant">001J3T0B00000000001N</parameter>
+                                 <parameter name="TargetTableName" source="field" updatable="true">temp.v_SQL_TABLE_NAME</parameter>
+                                 <parameter name="mappingId" source="field" updatable="true">temp.v_Mapping_Id</parameter>
+                                 <parameter name="icSessionId" source="field" updatable="true">output.icSessionId</parameter>
+                              </serviceInput>
+                              <link id="jjpjx4fg" targetId="jjpjx4ff"/>
+                           </service>
+                           <container id="jjpjx4ff" type="exclusive">
+                              <title>ResponseCode</title>
+                              <flow id="jjpjx4fp">
+                                 <create id="jjpjx4i3">
+                                    <title>Infa_FW_MCT</title>
+                                    <entityName>CONN-SQLSERVER-SF-PII-METADATA:Infa_FW_MCT</entityName>
+                                    <createInput>
+                                       <parameter name="MappingConfigId" source="field" updatable="true">output.MCT_Id</parameter>
+                                       <parameter name="MCT_Task_Name" source="field" updatable="true">temp.v_MCTName</parameter>
+                                       <parameter name="Task_Status" source="constant" updatable="true">Running</parameter>
+                                       <parameter name="Load_Type" source="constant" updatable="true">sfReplication</parameter>
+                                    </createInput>
+                                    <link id="jktltjk5" targetId="jktltjk4"/>
+                                 </create>
+                                 <service id="jktltjk4">
+                                    <title>RunMCT sfReplication</title>
+                                    <serviceName>CON-SC1-AUS-POST2-1:RunMCT</serviceName>
+                                    <serviceGUID>9GNyM3CZASxesixV1a8JcQ</serviceGUID>
+                                    <serviceInput>
+                                       <parameter name="icSessionId" source="field" updatable="true">output.icSessionId</parameter>
+                                       <parameter name="taskId" source="field" updatable="true">output.MCT_Id</parameter>
+                                       <parameter name="taskType" source="constant">MTT</parameter>
+                                    </serviceInput>
+                                    <link id="jktltjk6" targetId="jjpjx4j4"/>
+                                 </service>
+                                 <jumpTo id="jjpjx4j4">
+                                    <link id="jjpjx4j5" targetId="jjpjx4b5"/>
+                                 </jumpTo>
+                              </flow>
+                              <flow id="jjpjx4fr">
+                                 <assignment id="jklawggq">
+                                    <title>Create MCT Failure Email Assignment</title>
+                                    <operation source="constant" to="temp.Email_Input[1]/to">chaitanya.krishna@infometry.net;sridesai@informatica.com;dbalakrishnan@informatica.com</operation>
+                                    <operation source="formula" to="temp.Email_Input[1]/subject">
+                                       <expression language="XQuery">fn:concat('sfReplication Create MCT Failed for the Object ',$temp.V_TableName[1]/sf_object_name   )</expression>
+                                    </operation>
+                                    <operation source="formula" to="temp.Email_Input[1]/body">
+                                       <expression language="XQuery">'Hello Team, &lt;br&gt;
+ &lt;br&gt;
+This is to Inform you that'||fn:concat('sfReplication Create MCT Failed for the Object', $temp.V_TableName[1]/sf_object_name  )|| '&lt;br&gt;
+ &lt;br&gt;
+Task_Name : '||$temp.v_MCTName||
+'Error : '||$output.StatusCode||
+'&lt;br&gt;
+Regards &lt;br&gt;
+ICRT Email Service.'</expression>
+                                    </operation>
+                                    <operation source="constant" to="temp.Email_Input[1]/contentType">text/html</operation>
+                                    <link id="jky0dvac" targetId="jky0dvab"/>
+                                 </assignment>
+                                 <service id="jky0dvab">
+                                    <title>Create MCT  Failure Email Service</title>
+                                    <serviceName>AP-Email-1:sendEmailService</serviceName>
+                                    <serviceGUID>bFr1ORQ5863gRoPlz3BTAt</serviceGUID>
+                                    <serviceInput>
+                                       <parameter name="emailTaskInput" source="field" updatable="true">temp.Email_Input</parameter>
+                                    </serviceInput>
+                                    <link id="jky0dvad" targetId="jklawgi0"/>
+                                 </service>
+                                 <jumpTo id="jklawgi0">
+                                    <link id="jklawgi1" targetId="jjpjx4b5"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="jjpjx4fi" targetId="jjpjx4fp" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="string-equals">
+                                       <arg name="left">{$output.ResponseCode}</arg>
+                                       <arg name="right">200</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="jjpjx4fl" targetId="jjpjx4fr" type="containerLink"/>
+                           </container>
+                        </flow>
+                        <flow id="jjpjx4cb">
+                           <assignment id="jktltjkx">
+                              <title>Assignment to v_sfReplication_TotalCount, v_sfReplication_SuccessCount etc.</title>
+                              <operation source="list" to="temp.v_Infa_FW_MCT_TableList_TC">
+                                 <query from="CONN-SQLSERVER-SF-PII-METADATA-1:Infa_FW_MCT">
+                                    <where>Load_Type = 'sfReplication'</where>
+                                 </query>
+                              </operation>
+                              <operation source="formula" to="temp.v_sfReplication_TotalCount">
+                                 <expression language="XQuery">list:count($temp.v_Infa_FW_MCT_TableList_TC )</expression>
+                              </operation>
+                              <operation source="list" to="temp.v_Infa_FW_MCT_TableList_SC">
+                                 <query from="CONN-SQLSERVER-SF-PII-METADATA-1:Infa_FW_MCT">
+                                    <where>Load_Type = 'sfReplication' and Task_Status = 'Success'</where>
+                                 </query>
+                              </operation>
+                              <operation source="formula" to="temp.v_sfReplication_SuccessCount">
+                                 <expression language="XQuery">list:count($temp.v_Infa_FW_MCT_TableList_SC )</expression>
+                              </operation>
+                              <link id="jktltjm8" targetId="jktltjm7"/>
+                           </assignment>
+                           <container id="jktltjm7" type="exclusive">
+                              <title>v_sfReplication_TotalCount</title>
+                              <flow id="jktltjmh">
+                                 <assignment id="jktltjmx">
+                                    <title>sfReplication Success Email Assignment</title>
+                                    <operation source="constant" to="temp.Email_Input[1]/to">chaitanya.krishna@infometry.net;sridesai@informatica.com;dbalakrishnan@informatica.com</operation>
+                                    <operation source="constant" to="temp.Email_Input[1]/subject">sfReplication to SqlServer for PII Objects Completed Successfully</operation>
+                                    <operation source="formula" to="temp.Email_Input[1]/body">
+                                       <expression language="XQuery">'Hello Team, &lt;br&gt;
+ &lt;br&gt;
+This is to Inform you that sfReplication to SqlServer for PII Objects Completed Successfully &lt;br&gt;
+ &lt;br&gt;
+Regards &lt;br&gt;
+ICRT Email Service.'</expression>
+                                    </operation>
+                                    <operation source="constant" to="temp.Email_Input[1]/contentType">text/html</operation>
+                                    <link id="jky0dvbi" targetId="jky0dvbh"/>
+                                 </assignment>
+                                 <service id="jky0dvbh">
+                                    <title>sfReplication Success Email Service</title>
+                                    <serviceName>AP-Email-1:sendEmailService</serviceName>
+                                    <serviceGUID>bFr1ORQ5863gRoPlz3BTAt</serviceGUID>
+                                    <serviceInput>
+                                       <parameter name="emailTaskInput" source="field" updatable="true">temp.Email_Input</parameter>
+                                    </serviceInput>
+                                    <link id="jky0dvbj" targetId="jktp3i94"/>
+                                 </service>
+                                 <end id="jktp3i94">
+                                    <title>End 1</title>
+                                 </end>
+                              </flow>
+                              <flow id="jktltjmj">
+                                 <wait id="jktltjnb">
+                                    <title>Wait 5 Mins</title>
+                                    <duration source="formula">
+                                       <function name="duration_expression">
+                                          <arg name="value">5</arg>
+                                          <arg name="scale">M</arg>
+                                          <arg name="businessDays"/>
+                                       </function>
+                                    </duration>
+                                    <link id="jktltjnu" targetId="jktltjnt"/>
+                                 </wait>
+                                 <jumpTo id="jktltjnt">
+                                    <link id="jktltjnz" targetId="jktltjkx"/>
+                                 </jumpTo>
+                              </flow>
+                              <link id="jktltjma" targetId="jktltjmh" type="containerLink">
+                                 <condition source="formula">
+                                    <function name="equals">
+                                       <arg name="left">{$temp.v_sfReplication_TotalCount}</arg>
+                                       <arg name="right">{$temp.v_sfReplication_SuccessCount }</arg>
+                                    </function>
+                                 </condition>
+                              </link>
+                              <link id="jktltjmd" targetId="jktltjmj" type="containerLink"/>
+                           </container>
+                        </flow>
+                        <link id="jjpjx4c2" targetId="jjpjx4c9" type="containerLink">
+                           <condition source="formula">
+                              <function name="greater-than">
+                                 <arg name="left">{$temp.V_Row_Count}</arg>
+                                 <arg name="right">{0}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="jjpjx4c5" targetId="jjpjx4cb" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <flow id="jjpjx4a2">
+                     <throw id="jjpjx4ak">
+                        <title>Throw</title>
+                        <throwInput>
+                           <parameter name="code" source="constant" updatable="true">Unable to Get User Login Token</parameter>
+                           <parameter name="detail" source="constant" updatable="true"/>
+                           <parameter name="reason" source="constant" updatable="true"/>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="jjpjx49t" targetId="jjpjx4a0" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$output.ResponseCode}</arg>
+                           <arg name="right">200</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="jjpjx49w" targetId="jjpjx4a2" type="containerLink"/>
+               </container>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>8XwW4cfYSK7lWhd1Ex3VGR</types1:GUID>
+      <types1:DisplayName>Australia-Post-Delta-Flow 3</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:58.489Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

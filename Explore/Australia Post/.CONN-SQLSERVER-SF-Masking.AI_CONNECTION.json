@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "fn5cRohw0SUclrjrygXsgk",
+    "name" : "CONN-SQLSERVER-SF-Masking",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3vyoY2G7QnG5YLn-gt-194667-2018-09-07T04:54:39.879Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

@@ -1,0 +1,64 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>0seGbciZBpDUQbg-gt-194691-2018-09-07T04:54:39.996Z::conn.xml</types1:EntryId>
+      <types1:Name>AP-Email-1</types1:Name>
+      <types1:ParentFlowIds>HAHufWC64Ky2uI5-gt-1979094-2018-09-07T04:54:40.542Z::pd.xml,hFdw8jIw8jIw8jI-gt-481245-2018-09-07T04:54:41.22Z::pd.xml,htPk7HNCnchKGXS-gt-481235-2018-09-07T04:54:41.14Z::pd.xml,LRfRW8UBM7zsZvE-gt-1979104-2018-09-07T04:54:40.597Z::pd.xml,teOm6S6fPAreFRq-gt-481255-2018-09-07T04:54:41.317Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:40Z</types1:CreationDate>
+      <types1:ModifiedBy>sridesai@dibootcamp.infaips.com</types1:ModifiedBy>
+      <types1:ModificationDate>2018-09-07T05:17:53Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T05:18:20Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AP-Email-1/AP-Email-1.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AP-Email"
+                     label="AP-Email-1"
+                     name="AP-Email-1">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="Authentication" value="Enable"/>
+               <attribute encrypted="false" name="hostName" value="ipage.infometry.net"/>
+               <attribute encrypted="false" name="port" value="465"/>
+               <attribute encrypted="false"
+                          name="username"
+                          value="chaitanya.krishna@infometry.net"/>
+               <attribute encrypted="true" name="password" value=""/>
+               <attribute encrypted="false" name="security" value="SSL"/>
+               <attribute encrypted="false" name="connectionTimeout" value="30000"/>
+               <attribute encrypted="false"
+                          name="testToAddress"
+                          value="chaitanya.krishna@infometry.net"/>
+               <attribute encrypted="false"
+                          name="fromAddress"
+                          value="NoReply-SFSS-Mask@informatica.com"/>
+            </attributes>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="false"
+                           plugin="Camel"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           type="Email"
+                           uuid="9a8a03d0-0437-46c4-bedf-70acb4173c1f">
+               <description>Provides connections to email host servers.</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>bFr1ORQ5863gRoPlz3BTAt</types1:GUID>
+      <types1:DisplayName>AP-Email</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:49.528Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

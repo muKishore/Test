@@ -1,0 +1,141 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>LRfRW8UBM7zsZvE-gt-1979104-2018-09-07T04:54:40.597Z::pd.xml</types1:EntryId>
+      <types1:Name>Australia-Post-Delta-Flow_2-1</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T09:58:43Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Australia-Post-Delta-Flow_2-1/Australia-Post-Delta-Flow_2-1.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Australia-Post-Delta-Flow 2"
+                  name="Australia-Post-Delta-Flow_2-1">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 9</generator>
+            <output>
+               <field description="" name="O_RowCount" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="V_Email_Input" type="reference">
+                  <options>
+                     <option name="referenceTo">AP-Email-1:EmailTaskInput</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">bFr1ORQ5863gRoPlz3BTAt</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>sridesai@informatica.com.devtdmpoc</user>
+                     <user>dbalakrishnan@informatica.com.devtdmpoc</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jl6cb2d3" targetId="jl6cb2d2"/>
+               </start>
+               <service id="jl6cb2d2">
+                  <title>Run PRE_SQL_PKPII_WT01_HISTORY</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_PRE_SQL_PKPII_WT01_HISTORY [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">true</parameter>
+                     <parameter name="GUID" source="constant">d7luHbbwQqFkpOIy7Hw4gv</parameter>
+                  </serviceInput>
+                  <link id="jl6cb2dh" targetId="jl6cb2dg"/>
+               </service>
+               <service id="jl6cb2dg">
+                  <title>Run Cloud PKPII_WT01_History</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_PKPII_WT01_History [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">true</parameter>
+                     <parameter name="GUID" source="constant">agV5UanyBC4bG1R4Mt4NqP</parameter>
+                  </serviceInput>
+                  <link id="jl6cb2dv" targetId="jl6cb2du"/>
+               </service>
+               <service id="jl6cb2du">
+                  <title>Run Cloud Reference_WT02_History</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_Reference_WT02_History [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">true</parameter>
+                     <parameter name="GUID" source="constant">azd0JDgwQhNgcQl6MCIxKk</parameter>
+                  </serviceInput>
+                  <link id="jl6nwa0w" targetId="jl6nwa0v"/>
+               </service>
+               <service id="jl6nwa0v">
+                  <title>Run ICS Task-Drop SF FW Schema-Truncate MCT</title>
+                  <serviceName>ICSExecuteTask</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="Task Name" source="constant">MCT_AusPost_CleanUp_SF_FW_Truncate_WT_Day0 [MCT]</parameter>
+                     <parameter name="Wait for Task to Complete" source="constant">true</parameter>
+                     <parameter name="Fail on Cloud Task Errors" source="constant">true</parameter>
+                     <parameter name="GUID" source="constant">2xsMULO42W4fGccYX4b9kO</parameter>
+                  </serviceInput>
+                  <link id="jl6nwa0x" targetId="jl6cb2e8"/>
+               </service>
+               <service id="jl6cb2ek">
+                  <title>Schema Replication &amp; Delta Capture Success Email</title>
+                  <serviceName>AP-Email-1:sendEmailService</serviceName>
+                  <serviceGUID>bFr1ORQ5863gRoPlz3BTAt</serviceGUID>
+                  <serviceInput>
+                     <parameter name="emailTaskInput" source="field" updatable="true">temp.V_Email_Input</parameter>
+                  </serviceInput>
+                  <link id="jl6nwa0u" targetId="jl6cb2fj"/>
+               </service>
+               <assignment id="jl6cb2e8">
+                  <title>Assignment Schema Replication &amp; Delta Capture Success Email</title>
+                  <operation source="constant" to="temp.V_Email_Input[1]/to">sridesai@informatica.com;chaitanya.krishna@infometry.net;dbalakrishnan@informatica.com</operation>
+                  <operation source="constant" to="temp.V_Email_Input[1]/subject">SF Data Masking Notification : Schema Replication &amp; Day0 Delta Capture Completed Successfully</operation>
+                  <operation source="constant" to="temp.V_Email_Input[1]/body">Hello Team, &lt;br&gt;
+ &lt;br&gt;
+This is to Inform you that Delta Capture for PII Masking Schema and SalesforcePIIMetadata Schema Completed Successfully. &lt;br&gt;
+ &lt;br&gt;
+ &lt;br&gt;
+Regards &lt;br&gt;
+ICRT Email Service.</operation>
+                  <operation source="constant" to="temp.V_Email_Input[1]/contentType">text/html</operation>
+                  <link id="jl6cb2el" targetId="jl6cb2ek"/>
+               </assignment>
+               <end id="jl6cb2fj">
+                  <title>End 1</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>gFRhnOfXWycf1aHnTRX6AW</types1:GUID>
+      <types1:DisplayName>Australia-Post-Delta-Flow 2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:52.745Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

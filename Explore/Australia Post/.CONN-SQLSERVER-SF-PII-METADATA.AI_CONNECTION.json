@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "5BiTrkv4ZS6drgxOoP26AD",
+    "name" : "CONN-SQLSERVER-SF-PII-METADATA",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "6Hbf13ErhNzUzeA-gt-194675-2018-09-07T04:54:39.919Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

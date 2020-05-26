@@ -1,0 +1,84 @@
+{
+  "objectInfo" : {
+    "id" : "3C5gqxYhE2Mjdv4oZkLDUf",
+    "name" : "Australia-Post-Delta-Flow 4",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hFdw8jIw8jIw8jI-gt-481245-2018-09-07T04:54:41.22Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "bFr1ORQ5863gRoPlz3BTAt",
+    "name" : "AP-Email",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0seGbciZBpDUQbg-gt-194691-2018-09-07T04:54:39.996Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Australia Post"
+  }, {
+    "id" : "5BiTrkv4ZS6drgxOoP26AD",
+    "name" : "CONN-SQLSERVER-SF-PII-METADATA",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "6Hbf13ErhNzUzeA-gt-194675-2018-09-07T04:54:39.919Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Australia Post"
+  }, {
+    "id" : "9GNyM3CZASxesixV1a8JcQ",
+    "name" : "CON-SC1-AUS-POST2",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "dypLK2D86CjqFVN-gt-1979112-2018-09-07T04:54:40.63Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Australia Post"
+  } ]
+}

@@ -1,0 +1,183 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>dypKwKBqRi92qBb-gt-481225-2018-09-07T04:54:41.062Z::pd.xml</types1:EntryId>
+      <types1:Name>Australia-Post-Delta-Flow_5</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T10:03:28Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Australia-Post-Delta-Flow_5/Australia-Post-Delta-Flow_5.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Australia-Post-Delta-Flow 5"
+                  name="Australia-Post-Delta-Flow_5">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 9</generator>
+            <output>
+               <field description="" name="O_RowCount" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="v_Table_mct" type="objectlist">
+                  <options>
+                     <option name="referenceTo">CONN-SQLSERVER-SF-PII-METADATA:Infa_FW_MCT</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5BiTrkv4ZS6drgxOoP26AD</option>
+                  </options>
+               </field>
+               <field description="" name="V_mctid" type="reference">
+                  <options>
+                     <option name="referenceTo">CONN-SQLSERVER-SF-PII-METADATA:Infa_FW_MCT</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5BiTrkv4ZS6drgxOoP26AD</option>
+                  </options>
+               </field>
+               <field description="" name="v_MCTID_ID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="V_Row_Count" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>sridesai@informatica.com.devtdmpoc</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jjplv1c2" targetId="jjplv1c1"/>
+               </start>
+               <assignment id="jjplv1c1">
+                  <title>Assignment to V_Row_Count, O_RowCount etc.</title>
+                  <operation source="list" to="temp.v_Table_mct">
+                     <query from="CONN-SQLSERVER-SF-PII-METADATA-1:Infa_FW_MCT">
+                        <where>Load_Type = 'sfUpdate'</where>
+                     </query>
+                  </operation>
+                  <operation source="formula" to="temp.V_Row_Count">
+                     <expression language="XQuery">list:count($temp.v_Table_mct )</expression>
+                  </operation>
+                  <operation source="field" to="output.O_RowCount">temp.V_Row_Count</operation>
+                  <link id="jjplv1c7" targetId="jjplv1c6"/>
+               </assignment>
+               <service id="jjplv1c6">
+                  <title>Login</title>
+                  <serviceName>CON-SC1-AUS-POST2-1:Login</serviceName>
+                  <serviceGUID>9GNyM3CZASxesixV1a8JcQ</serviceGUID>
+                  <serviceInput>
+                     <parameter name="UserName" source="constant">sridesai@informatica.com.devtdmpoc</parameter>
+                     <parameter name="Password" source="constant">infa123</parameter>
+                  </serviceInput>
+                  <link id="jjplv1cj" targetId="jjplv1ci"/>
+               </service>
+               <container id="jjplv1ci" type="exclusive">
+                  <title>ResponseCode</title>
+                  <flow id="jjplv1cs">
+                     <assignment id="jjplv1ei">
+                        <title>Assignment-Get ID from Table</title>
+                        <operation source="formula" to="temp.V_mctid">
+                           <expression language="XQuery">head($temp.v_Table_mct)</expression>
+                        </operation>
+                        <link id="jjplv1f2" targetId="jjplv1f1"/>
+                     </assignment>
+                     <container id="jjplv1f1" type="exclusive">
+                        <title>Rowcount check</title>
+                        <flow id="jjplv1fd">
+                           <assignment id="jjplv1gm">
+                              <title>Assignment to v_MCTID_ID, v_Table_mct etc.</title>
+                              <operation source="field" to="temp.v_MCTID_ID">temp.V_mctid[1]/MappingConfigId</operation>
+                              <operation source="formula" to="temp.v_Table_mct">
+                                 <expression language="XQuery">remove($temp.v_Table_mct ,1)</expression>
+                              </operation>
+                              <operation source="formula" to="temp.V_Row_Count">
+                                 <expression language="XQuery">$temp.V_Row_Count -1</expression>
+                              </operation>
+                              <link id="jjplv1he" targetId="jjplv1hd"/>
+                           </assignment>
+                           <service id="jjplv1hd">
+                              <title>Run MCT</title>
+                              <serviceName>CON-SC1-AUS-POST2-1:RunMCT</serviceName>
+                              <serviceGUID>9GNyM3CZASxesixV1a8JcQ</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="icSessionId" source="field" updatable="true">output.icSessionId</parameter>
+                                 <parameter name="taskId" source="field" updatable="true">temp.v_MCTID_ID</parameter>
+                                 <parameter name="taskType" source="constant">MTT</parameter>
+                              </serviceInput>
+                              <link id="jkktq0pj" targetId="jkktq0ph"/>
+                           </service>
+                           <jumpTo id="jkktq0ph">
+                              <link id="jkktq0pi" targetId="jjplv1ei"/>
+                           </jumpTo>
+                        </flow>
+                        <flow id="jjplv1ff">
+                           <end id="jkktq0og">
+                              <title>End 2</title>
+                           </end>
+                        </flow>
+                        <link id="jjplv1f6" targetId="jjplv1fd" type="containerLink">
+                           <condition source="formula">
+                              <function name="greater-than">
+                                 <arg name="left">{$temp.V_Row_Count}</arg>
+                                 <arg name="right">{0}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="jjplv1f9" targetId="jjplv1ff" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <flow id="jjplv1cu">
+                     <throw id="jjplv1dg">
+                        <title>Throw</title>
+                        <throwInput>
+                           <parameter name="code" source="constant" updatable="true">Unable to Get User Login Token</parameter>
+                           <parameter name="detail" source="constant" updatable="true"/>
+                           <parameter name="reason" source="constant" updatable="true"/>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="jjplv1cl" targetId="jjplv1cs" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$output.ResponseCode}</arg>
+                           <arg name="right">200</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="jjplv1co" targetId="jjplv1cu" type="containerLink"/>
+               </container>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>bqw1gV7DfqJfoEsDoQQeKZ</types1:GUID>
+      <types1:DisplayName>Australia-Post-Delta-Flow 5</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:58.51Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

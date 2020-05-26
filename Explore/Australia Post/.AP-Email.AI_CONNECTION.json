@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "bFr1ORQ5863gRoPlz3BTAt",
+    "name" : "AP-Email",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0seGbciZBpDUQbg-gt-194691-2018-09-07T04:54:39.996Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

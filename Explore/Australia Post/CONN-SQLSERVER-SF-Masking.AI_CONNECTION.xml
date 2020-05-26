@@ -1,0 +1,66 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>3vyoY2G7QnG5YLn-gt-194667-2018-09-07T04:54:39.879Z::conn.xml</types1:EntryId>
+      <types1:Name>CONN-SQLSERVER-SF-Masking</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:INW2PC04KMW9</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:40Z</types1:CreationDate>
+      <types1:ModifiedBy>sridesai@dibootcamp.infaips.com</types1:ModifiedBy>
+      <types1:ModificationDate>2018-09-07T09:54:16Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T09:54:57Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/CONN-SQLSERVER-SF-Masking/CONN-SQLSERVER-SF-Masking.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="CONN-SQLSERVER-SF-Masking"
+                     label="CONN-SQLSERVER-SF-Masking"
+                     name="CONN-SQLSERVER-SF-Masking">
+            <description/>
+            <tags>.agent:INW2PC04KMW9</tags>
+            <agent>INW2PC04KMW9</agent>
+            <attributes>
+               <attribute encrypted="false"
+                          name="JDBC Connection URL"
+                          value="jdbc:sqlserver://INW2PC04KMW9:1433;databaseName=AusPost"/>
+               <attribute encrypted="false"
+                          name="JDBC Jar Directory"
+                          value="E:\Auspost\Driver\sqljdbc4-2.0.jar"/>
+               <attribute encrypted="false" name="JDBC Driver Class Name" value=""/>
+               <attribute encrypted="false" name="Schema" value="dbo"/>
+               <attribute encrypted="false" name="Username" value="srikanth"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false" name="Object Filter" value=""/>
+               <attribute encrypted="false" name="TimeZone" value="Default"/>
+               <attribute encrypted="false" name="$read-Isolation Level" value="None"/>
+               <attribute encrypted="false"
+                          name="$read-Override Isolation Level"
+                          value="false"/>
+               <attribute encrypted="false" name="$write-Number of retries" value="5"/>
+               <attribute encrypted="false" name="$write-Retry wait period" value="3"/>
+            </attributes>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="true"
+                           plugin="ICS"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="true"
+                           supportsOData="true"
+                           type="GenericJDBCAdapter"
+                           uuid="33ec8fc7-dc6d-4d2e-9f6f-a950669a62d1">
+               <description>JDBC  Generic Cloud Adapter</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>fn5cRohw0SUclrjrygXsgk</types1:GUID>
+      <types1:DisplayName>CONN-SQLSERVER-SF-Masking</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:49.506Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

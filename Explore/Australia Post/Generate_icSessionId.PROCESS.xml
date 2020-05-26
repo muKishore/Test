@@ -1,0 +1,88 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>wONeJ91pqrzYLnz-gt-481265-2018-09-07T04:54:41.369Z::pd.xml</types1:EntryId>
+      <types1:Name>Generate_icSessionId</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T09:57:55Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Generate_icSessionId/Generate_icSessionId.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Generate_icSessionId"
+                  name="Generate_icSessionId">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 9</generator>
+            <tempFields>
+               <field description="" name="v_filewriter" type="reference">
+                  <options>
+                     <option name="referenceTo">FileWriter:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8Cwjz32mwSBi6YAxrZVnYd</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>sridesai@informatica.com.devtdmpoc</user>
+                     <user>dbalakrishnan@informatica.com.devtdmpoc</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jl7zp6g2" targetId="jl7zp6g1"/>
+               </start>
+               <service id="jl7zp6g1">
+                  <title>login</title>
+                  <serviceName>Conn-SC-Salesforce:login</serviceName>
+                  <serviceGUID>1i3RWwkfkrRhVtNDQtlnwS</serviceGUID>
+                  <serviceInput>
+                     <parameter name="username" source="constant">michael.gibson@auspost.com.au.tdm</parameter>
+                     <parameter name="password" source="constant">Welcome1!</parameter>
+                     <parameter name="orgid" source="constant">00D5D0000008qVs</parameter>
+                  </serviceInput>
+                  <link id="jl804327" targetId="jl804326"/>
+               </service>
+               <service id="jl80432e">
+                  <title>FileWriter</title>
+                  <serviceName>FileWriter:FileWriter</serviceName>
+                  <serviceGUID>8Cwjz32mwSBi6YAxrZVnYd</serviceGUID>
+                  <serviceInput>
+                     <parameter name="fileWriteTask" source="field" updatable="true">temp.v_filewriter</parameter>
+                  </serviceInput>
+                  <link id="jl80432g" targetId="c"/>
+               </service>
+               <assignment id="jl804326">
+                  <title>Assignment to Content Format, File name etc.</title>
+                  <operation source="constant" to="temp.v_filewriter[1]/format">PlainText</operation>
+                  <operation source="constant" to="temp.v_filewriter[1]/fileName">Org_001J3T_icSessionId.txt</operation>
+                  <operation source="field" to="temp.v_filewriter[1]/content">output.sessionId</operation>
+                  <link id="jl80432f" targetId="jl80432e"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>9If1hKQHMuVg5ftBRmILAJ</types1:GUID>
+      <types1:DisplayName>Generate_icSessionId</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:58.456Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

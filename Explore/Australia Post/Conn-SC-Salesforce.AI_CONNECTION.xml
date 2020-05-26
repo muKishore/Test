@@ -1,0 +1,46 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>E8vyXYDdxKlFmVS-gt-1979084-2018-09-07T04:54:40.489Z::conn.xml</types1:EntryId>
+      <types1:Name>Conn-SC-Salesforce</types1:Name>
+      <types1:ParentFlowIds>wONeJ91pqrzYLnz-gt-481265-2018-09-07T04:54:41.369Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T05:28:34Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Conn-SC-Salesforce/Conn-SC-Salesforce.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Conn-SC-Salesforce"
+                     label="Conn-SC-Salesforce"
+                     name="Conn-SC-Salesforce">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_Salesforce/SC_Salesforce_svcDef.xml"
+                               guid="eyqH8lMdlSbg5cmAs6T3qB"
+                               name="SC-Salesforce"
+                               supportsConnectionTest="false"
+                               uuid="684c441b-86e1-428a-b722-dbc837bd6cdf">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>1i3RWwkfkrRhVtNDQtlnwS</types1:GUID>
+      <types1:DisplayName>Conn-SC-Salesforce</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:52.724Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

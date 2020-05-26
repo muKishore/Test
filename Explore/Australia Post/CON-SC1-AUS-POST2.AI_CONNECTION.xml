@@ -1,0 +1,46 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>dypLK2D86CjqFVN-gt-1979112-2018-09-07T04:54:40.63Z::conn.xml</types1:EntryId>
+      <types1:Name>CON-SC1-AUS-POST2-1</types1:Name>
+      <types1:ParentFlowIds>dypKwKBqRi92qBb-gt-481225-2018-09-07T04:54:41.062Z::pd.xml,hFdw8jIw8jIw8jI-gt-481245-2018-09-07T04:54:41.22Z::pd.xml,htPk7HNCnchKGXS-gt-481235-2018-09-07T04:54:41.14Z::pd.xml,teOm6S6fPAreFRq-gt-481255-2018-09-07T04:54:41.317Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>sridesai@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2018-09-07T04:54:41Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>sridesai@dibootcamp.infaips.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-09-07T05:20:16Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/CON-SC1-AUS-POST2-1/CON-SC1-AUS-POST2-1.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="CON-SC1-AUS-POST2"
+                     label="CON-SC1-AUS-POST2"
+                     name="CON-SC1-AUS-POST2-1">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SC_ICS_AUS_POST/SC_ICS_AUS_POST_svcDef.xml"
+                               guid="6T8HenTOmfHjszAvdNGDSb"
+                               name="SC-ICS-AUS-POST"
+                               supportsConnectionTest="false"
+                               uuid="0397d247-e2b1-4307-9e0e-b4f442f01f3d">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>9GNyM3CZASxesixV1a8JcQ</types1:GUID>
+      <types1:DisplayName>CON-SC1-AUS-POST2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-05-26T10:05:52.735Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
