@@ -13,9 +13,9 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "",
-        "contentType" : null,
-        "documentState" : "VALID"
+        "description" : "TEST",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
       }
     }
   },
