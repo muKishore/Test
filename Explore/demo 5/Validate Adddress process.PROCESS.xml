@@ -1,0 +1,111 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>YZcjKsJlv58pIO3-gt-6990490-2021-04-12T06:40:57.811Z::pd.xml</types1:EntryId>
+      <types1:Name>Validate_Adddress_process-4</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:Ann,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2021-04-12T06:40:58Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Validate Adddress process"
+                  name="Validate_Adddress_process-4">
+            <appliesTo/>
+            <description/>
+            <tags>.agent:Ann,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Address1" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="Address2" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="Address3" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="City" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="State" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="Country" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="ZIP" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="Response" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>Ann</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+                  <wholePayload outputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jus18k1e" targetId="jus18k1d"/>
+               </start>
+               <service id="jus18k1d">
+                  <title>Validate_address</title>
+                  <serviceName>CN-Address-Validation-4:Validate_address</serviceName>
+                  <serviceGUID>elyue7czRmdhOYDxHx4ZKi</serviceGUID>
+                  <serviceInput>
+                     <parameter name="Address1" source="field" updatable="true">input.Address1</parameter>
+                     <parameter name="Address2" source="field" updatable="true">input.Address2</parameter>
+                     <parameter name="Address3" source="field" updatable="true">input.Address3</parameter>
+                     <parameter name="City" source="field" updatable="true">input.City</parameter>
+                     <parameter name="State" source="field" updatable="true">input.State</parameter>
+                     <parameter name="Country" source="field" updatable="true">input.Country</parameter>
+                     <parameter name="ZIP" source="field" updatable="true">input.ZIP</parameter>
+                  </serviceInput>
+                  <link id="jus1yzfg" targetId="jus1yzff"/>
+               </service>
+               <assignment id="jus1yzff">
+                  <title>Assignment to Response</title>
+                  <operation source="field" to="output.Response">output.Output</operation>
+                  <link id="jus1yzfh" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>1tlwkrex6MOexPJcN2iCKl</types1:GUID>
+      <types1:DisplayName>Validate Adddress process</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-12T07:38:13.743Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
