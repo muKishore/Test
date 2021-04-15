@@ -1,0 +1,114 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>xbbf3TzAnOjseGb-gt-14752882-2021-04-12T06:40:56.374Z::svc.xml</types1:EntryId>
+      <types1:Name>SC_Address_Validation-4</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mjoseph@dibootcamp.infaips.com</types1:CreatedBy>
+      <types1:CreationDate>2021-04-12T06:40:56Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="true"
+                            debug="false"
+                            displayName="SC_Address_Validation"
+                            label=""
+                            name="SC_Address_Validation-4"
+                            uuid="c5db77b6-78d5-4655-975d-b37aa0984c41">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Validate_address"
+                       maxRedirects="100"
+                       name="Validate_address"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="Address1"
+                                nogen="true"
+                                required="false"
+                                testWith="8516 MILL FARM CT"
+                                type="string"/>
+                     <parameter name="Address2"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter name="Address3"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter name="City"
+                                nogen="true"
+                                required="false"
+                                testWith="INDIANAPOLIS"
+                                type="string"/>
+                     <parameter name="State"
+                                nogen="true"
+                                required="false"
+                                testWith="IN"
+                                type="string"/>
+                     <parameter name="Country"
+                                nogen="true"
+                                required="false"
+                                testWith="USA"
+                                type="string"/>
+                     <parameter name="ZIP"
+                                nogen="true"
+                                required="false"
+                                testWith="46227"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://invrl7ips03.informatica.com:8095/DataIntegrationService/WebService/Web_Service_address_validation/"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/xml</header>
+                        </httpHeaders>
+                        <body>{&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://www.informatica.com/dis/ws/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+    &lt;soap:Body&gt;
+        &lt;tns:Mapplet_address_validation_check_Operation&gt;
+            &lt;tns:Group&gt;
+                &lt;tns:Address1&gt;{$Address1}&lt;/tns:Address1&gt;
+                &lt;tns:Address2&gt;{$Address2 }&lt;/tns:Address2&gt;
+                &lt;tns:Address3&gt;{$Address3 }&lt;/tns:Address3&gt;
+                &lt;tns:City&gt;{$City}&lt;/tns:City&gt;
+                &lt;tns:State&gt;{$State}&lt;/tns:State&gt;
+                &lt;tns:Country&gt;{$Country }&lt;/tns:Country&gt;
+                &lt;tns:ZIP&gt;{$ZIP }&lt;/tns:ZIP&gt;
+            &lt;/tns:Group&gt;
+        &lt;/tns:Mapplet_address_validation_check_Operation&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="" name="Output" type="string">
+                        <xquery>{util:toJSON(//*[local-name()='Mapplet_address_validation_check_OperationResponse'])}</xquery>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects/>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>6bA7tMO5VvGeGgFqHW8bw8</types1:GUID>
+      <types1:DisplayName>SC_Address_Validation</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-04-15T11:07:31.268Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
